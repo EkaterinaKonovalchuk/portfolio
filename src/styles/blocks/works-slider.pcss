@@ -1,0 +1,155 @@
+.works-slider{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top:5%;
+    padding-left:5%;
+}
+
+.works-slider__pics{
+    position: relative;
+    width: 50%;
+    z-index:10;
+    height: 362px;
+}
+
+.works-slider__pics::before{
+    content:attr(data-slide);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    line-height: 1;
+    left: 100%;
+    font-size: 25rem;
+    font-weight: 800;
+    margin-left: -8%;
+    color: rgba(65, 76, 99, .05 );
+}
+
+.works-slider__fullpic-container{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    
+
+}
+
+.works-slider__fullpic{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.works-slider__buttons{
+    position:absolute;
+    top:100%;
+    right:0;
+    display:flex;
+}
+
+.works-slider__thumbs{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width: 178px;
+}
+
+.works-slider__btn{
+    width:50px;
+    height:50px;
+    background:#2d3c4e;
+    display:block;
+    position:relative;
+}
+
+.works-slider__btn:before{
+    content:"";
+    display:block;
+    width:8px;
+    height:10px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+    background: url(../images/icons/arrow-down.svg) 50% no-repeat;
+    transition: opacity .3s, margin-top .3s;
+    opacity: .3s;
+
+}
+
+.works-slider__btn-prev::before{
+    transform: translate(-50%,-50%) rotate(-270deg);
+}
+
+.works-slider__thumbs-item{
+    height:100px;
+    transition: .2s;
+}
+
+.works-slider__thumbs-link{
+    display:block;
+    height:100%;
+}
+
+.works-slider__thumbs-link::active{
+    outline: 3px solid #f29400;
+}
+
+.works-slider__thumb{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.works-slider__data{
+    width: 40%;
+    padding-left: 10%;
+    z-index: 10;
+}
+
+.tags-item{
+    margin-left:15px;
+    margin-bottom:15px;
+    padding: 13px 21px;
+    background: #f1f5f9;
+    font-size:15px;
+    font-weight:600;
+    color:rgba(65,76,99,.7);
+    border-radius:50px;
+}
+
+.works-slider__title{
+    margin-bottom:42px;
+}
+
+.title-section_middle{
+    font-size:30px;
+}
+
+.title-section{
+    font-size:36px;
+    font-weight:700;
+    color:#414c63;
+}
+
+.tags{
+    display:flex;
+}
+
+.works-slider__text{
+    opacity: 0.7;
+    color: #414c63;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.user--horizontal{
+    display:flex;
+    padding-top: 20px;
+}
+
+.reviews__slider{
+    padding: 10% 15% 10%;
+}
