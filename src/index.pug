@@ -7,10 +7,32 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
+
   body
     .wrapper
       .maincontent
         .welcome-section
+          section.parallax
+            .parallax__layer
+              .parallax__bg
+                +image('parallax/1.jpg', 'parallax__bg-img')
+              .parallax__layer-one
+                +image('parallax/2.png', 'parallax__layer-img')
+              .parallax__layer-two
+                +image('parallax/3.png', 'parallax__layer-img')
+              .parallax__layer-three
+                +image('parallax/4.png', 'parallax__layer-img')
+              .parallax__layer-four
+                +image('parallax/5.png', 'parallax__layer-img')
+              .parallax__layer-five
+                +image('parallax/6.png', 'parallax__layer-img')
+              .parallax__layer-six
+                +image('parallax/7.png', 'parallax__layer-img')
+            //- for (var i=1; i< 7; i++)
+              .parallax__layer
+                picture
+                  .parallax__image
+                  img(srcset = require(`images/parallax/${i}.${ i==1 ? 'jpg' : 'png'  }`)).parallax__image
           section.hero
             .container.hero__container
               header.header
@@ -18,11 +40,11 @@ html(lang="en")
                   a.logo(href="" title="logo") BA
                 .header__menu
                   nav.menu
-                    ul.menu__list
+                    ul.menu__list.menu__list-header
                       - var menuitems = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
                       each item in menuitems
                        li.menu__item
-                        a.menu__link(href="") #{item}
+                        a.menu__link(href="#" title= `${item}`) #{item}
                 .header__links
                     ul.socials
                       - var linksitems = ["insta", "vk", "github"];
@@ -63,83 +85,22 @@ html(lang="en")
                 .about__desc
                   p.about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                   p.about__qoute Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .triangles
-          svg.triangles__item.triangles__item--left(viewBox="0 0 1000 100" preserveAapectRation="none")
-            polygon(
-              points="0,0 0,100 1000, 100"
-            )
-          svg.triangles__item.triangles__item--right(viewBox="0 0 1000 100" preserveAapectRation="none")
-            polygon(
-              points="0,100 1000,100 1000,0"
-            )
+           
         
         .section.values
           .container.values__container
+            .advantage__wrapper
               .values__title
                 h2.section-title.values__title-text.section-title--small Чем я могу быть полезна вам
                 .values__desc
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-              svg.gradient
-                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-                  stop(offset="0%" stop-color="#5500f2")
-                  stop(offset="100%" stop-color="#8f00ef")
-              ul.user-skills
-                -
-                  var skills = [
-                    ['Front-end', ['html', 'css', 'javascript', 'jquery']],
-                    ['Workflow', ['git', 'terminal', 'gulp', 'webpack']]
-                  ]
-                each item in skills  
-                  li.user-skills__item.skills-row
-                    h3.skills-row__title #{item[0]}
-                    ul.skills-row__list
-                      each skill in item[1]
-                        li.skills-row__item
-                          .skill
-                            svg(viewBox="0 0 100 100" preserveAapectRation="none").skill__shape
-                              circle(
-                                r="40" cx="50" cy="50"
-                              ).skill__circle.skill__circle--under
-                              circle(
-                                r="40" cx="50" cy="50" stroke="url(#gradient)" transform="rotate(100 50 50)"
-                              ).skill__circle.skill__circle--above
-                            .skill__title #{skill}  
-        
+            .advantage__widget
+              #skills-component   
         section.works
-          container.works__container
+          .container.works__container
             h2.title-section.works__section-title Мои работы
             .works__content
-              .works-slider
-                .works-slider__pics(data-slide="3")
-                  .works-slider__fullpic-container
-                    +image('content/slider_one.png', 'works-slider__fullpic')
-                  .works-slider__buttons
-                    button.works-slider__btn.works-slider__btn-next(href="")
-                    button.works-slider__btn.works-slider__btn-prev(href="")
-                  ul.works-slider__thumbs
-                    li.works-slider__thumbs-item
-                      a.works-slider__thumbs-link.active(href="")
-                        +image('content/slide__two.png', 'works-slider__thumb')
-                    li.works-slider__thumbs-item
-                      a.works-slider__thumbs-link(href="")
-                        +image('content/slide__three.png', 'works-slider__thumb')
-                    li.works-slider__thumbs-item
-                      a.works-slider__thumbs-link(href="")
-                        +image('content/slider_one.png', 'works-slider__thumb')      
-                .works-slider__data
-                  ul.tags
-                    li.tags-item
-                      .tag Html
-                    li.tags-item
-                      .tag CSS
-                    li.tags-item
-                      .tag javascript
-                  .works-slider__title.title-section.title-section_middle Сайт школы образования
-                  .works-slider__text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-
-
-
-        
+              #slider-component
         .bottom__section
           section.reviews
             .reviews__title
@@ -170,13 +131,19 @@ html(lang="en")
           section.form
             .section-title Связаться со мной
             form.myform
-              .form__data
-                .form__name
-                  .form__title Введите ваше имя
-                  .form__placeholder Ковальчук Дмитрий
-                .form__email
-                  .form__title Введите ваш email
-                  .form__placeholder loftschool@study.com
+              .form__row
+                -
+                  var fields=[
+                    ['user', 'Введите ваше имя', 'Ковальчук Дмитрий'],
+                    ['envelope','Введите ваш email','loftschool@study.com']
+                  ]
+                each item in fields
+                  label.form-block(data-title=item[1])
+                    .form-block__container
+                      +icon(`${item[0]}`,'form-block__icon')
+                      .form-block__field
+                        input(type="text" placeholder=item[2]).form-block__input
+              
               .form__message
                 .form__title Сообщение к письму
                 .form__placeholder Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса
@@ -191,7 +158,7 @@ html(lang="en")
             .footer__data
               .footer__menu
                 nav.menu.menu--color-white
-                    ul.menu__list
+                    ul.menu__list.menu__list-footer
                       each item in menuitems
                        li.menu__item
                         a.menu__link(href="") #{item}
@@ -206,7 +173,17 @@ html(lang="en")
                 .footer__data-col
                   article.footer__text
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете  
-                                 
-        // +image('content/user.jpg', 'user-pic')
-        // +icon('link', 'link-class')
-        // .icon-bg
+
+        .hamburger-menu-link(id="hamburger-menu-link")
+          .hamburger-menu-link__bars.close__bar  
+
+        .hamburger-menu(id="hamburger-menu")
+          .hamburger-menu__item
+            nav.nav.nav__hamburger
+              ul.menu__list(id="menu__list-hamburger") 
+                - var menuitems = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                      each item in menuitems
+                       li.menu__item.nav__item_hamburger
+                        a.menu__item-link(href="") #{item}   
+    include ./templates/entry.pug 
+             

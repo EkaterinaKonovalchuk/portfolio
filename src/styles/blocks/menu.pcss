@@ -3,8 +3,14 @@
     align-item:center;
 }
 
+.menu__list-header{
+   @include tablets{
+        display:none;
+    }
+}
+
 .menu__item{
-    margin-right:60px;
+    margin-right:70.4px;
 
     &:last-child{
         margin-right:0;
@@ -12,8 +18,28 @@
 }
 
 .menu__link{
+    border-bottom: 3px solid transparent;
+    padding:49px 11px;
+    display:inline-block;
     text-decoration:none;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
+
+    &:hover{
+
+        color:#5500f2;
+        border-bottom: 3px solid #5500f2;
+        font-weight:700;
+
+    }
+    
+        &:after{
+        display:block;
+        content: attr(title);
+        height:0;
+        overflow:hidden;
+        visibility:hidden;
+        font-weight:700;
+    }
 }

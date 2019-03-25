@@ -1,3 +1,8 @@
 .welcome-section{
   background: url(../images/content/welcome-section.png) center center/cover no-repeat;
+  clip-path: polygon(0 0, 0 93%, 50% 100%, 100% 93%, 100% 0 );
+
+  @include tablets{
+    clip-path: polygon(0 0,0 95%,50% 100%,100% 95%,100% 0);
+  }
 }

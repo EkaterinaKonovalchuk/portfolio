@@ -2,17 +2,29 @@
     display:flex;
     padding-left:15%;
     padding-right:15%;
+
+    @include tablets{
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .user-info__name{
     color: #414c63;
     font-size: 72px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 60px;
+
+    @include phones{
+        font-size:56px;
+    }
 }
 
 .user-info__desc{
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.875rem;
+    opacity: 0.4;
 }

@@ -1,0 +1,21 @@
+[{
+    "skillsGroup": "Front-end",
+    "skillsList":{
+        "html": 80,
+        "css":70,
+        "javascript":50,
+        "jquery":50
+    }
+},
+
+{
+    "skillsGroup": "workflow",
+    "skillsList":{
+        "git": 80,
+        "terminal":80,
+        "gulp":50,
+        "webpack":70
+}
+}
+
+]
