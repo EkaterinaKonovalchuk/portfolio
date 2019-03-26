@@ -2,3 +2,18 @@
     margin-bottom:10px;
  
 }
+
+.user-skills{
+    padding-left:30%;
+
+    @include tablets{
+        padding-left:0;
+    }
+
+    @include phones{
+            display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+
+}

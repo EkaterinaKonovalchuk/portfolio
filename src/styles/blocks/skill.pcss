@@ -5,6 +5,11 @@
     stroke: #ccc;
     stroke-width:3px;
     position: relative;
+
+    @include tablets{
+        width:168px;
+        height:168px;
+    }
 }
 
 .skill__circle{
@@ -23,7 +28,7 @@
     stroke-width: 0.75rem;
 }
 
-.skill__title{
+.skill__circle-text{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,6 +39,4 @@
     line-height: 48px;
 }
 
-.user-skills{
-    padding-left:30%;
-}
+

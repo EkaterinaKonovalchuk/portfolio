@@ -6,15 +6,31 @@
 
 .footer__container{
     display:flex;
-    justify-content:space-between
+    justify-content:space-between;
+
+@include phones{
+            flex-direction: column;
+    }
 }
 
 .footer__copyright{
     height:30%;
+
+    @include tablets{
+        width: 30%;
+    }
+
+    @include phones{
+        width:100%;
+    }
 }
 
 .footer__data{
     width:60%;
+
+    @include phones{
+        width:100%;
+    }
 }
 
 .footer__menu{
@@ -24,4 +40,8 @@
 .footer__data-columns{
     display: flex;
     opacity: 0.3;
+
+    @include phones{
+        flex-direction: column;
+    }
 }
