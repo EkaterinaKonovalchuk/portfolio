@@ -109,7 +109,7 @@ html(lang="en")
             ul.reviews__slider
               - for (var i=0; i<1;i++)
                   li.reviews__slider-item
-                    .quote
+                    .quote.quote__left
                       .quote__text Эта девушка проходила веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                       .quote__author
                         .user.user--horizontal
@@ -119,7 +119,7 @@ html(lang="en")
                             .user__name Ковальчук Дмитрий
                             .user__occ Основатель loftschool 
                   li.reviews__slider-item
-                    .quote
+                    .quote.quote__right
                       .quote__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                       .quote__author
                         .user.user--horizontal
@@ -128,9 +128,9 @@ html(lang="en")
                           .user__data
                             .user__name Владимир Сабанцев
                             .user__occ  Преподаватель                        
-          section.form
+        section.form
+          form.myform
             .section-title Связаться со мной
-            form.myform
               .form__row
                 -
                   var fields=[
@@ -138,15 +138,16 @@ html(lang="en")
                     ['envelope','Введите ваш email','loftschool@study.com']
                   ]
                 each item in fields
-                  label.form-block(data-title=item[1])
+                  label.form-block.form__title( data-title = item[1] ) #{item[1]}
                     .form-block__container
                       +icon(`${item[0]}`,'form-block__icon')
                       .form-block__field
                         input(type="text" placeholder=item[2]).form-block__input
               
               .form__message
-                .form__title Сообщение к письму
-                .form__placeholder Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса
+                +icon('message','form-block__icon')
+                label.form__title Сообщение к письму
+                textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__textarea
               button.form__button Отправить
         
         footer.footer

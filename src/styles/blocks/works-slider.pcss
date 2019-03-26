@@ -133,6 +133,11 @@
         padding-top: 10%;
     
     }
+
+    @include phones{
+        width: 100%;
+    text-align: left;
+    }
 }
 
 .tags-item{
@@ -144,6 +149,10 @@
     font-weight:600;
     color:rgba(65,76,99,.7);
     border-radius:50px;
+
+    @include phones{
+        padding: 8px 34px;
+    }
 }
 
 .works-slider__title{
@@ -158,6 +167,10 @@
     font-size:36px;
     font-weight:700;
     color:#414c63;
+
+    @include phones{
+        font-size: 28px;
+    }
 }
 
 .tags{
@@ -174,6 +187,10 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 30px;
+
+    @include phones{
+        font-size: 18px;
+    }
 }
 
 .user--horizontal{
