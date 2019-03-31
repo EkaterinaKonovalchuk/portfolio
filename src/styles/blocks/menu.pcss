@@ -1,6 +1,6 @@
 .menu__list{
     display:flex;
-    align-item:center;
+    align-items:center;
 
     @include phones{
             flex-wrap: wrap;
@@ -49,5 +49,25 @@
 
     @include phones{
         padding: 1.0625rem 0.6875rem;
+    }
+}
+
+.menu__list_footer{
+
+    margin-left:-70px;
+
+    @include tablets{
+        flex-wrap:wrap;
+    }
+
+    .menu__link{
+        padding:0;
+        border-bottom:none;
+    }
+
+
+    .menu__item{
+        margin-left:70px;
+        margin-right:0;
     }
 }

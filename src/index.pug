@@ -13,21 +13,20 @@ html(lang="en")
       .maincontent
         .welcome-section
           section.parallax
-            .parallax__layer
-              .parallax__bg
-                +image('parallax/1.jpg', 'parallax__bg-img')
-              .parallax__layer-one
-                +image('parallax/2.png', 'parallax__layer-img')
-              .parallax__layer-two
-                +image('parallax/3.png', 'parallax__layer-img')
-              .parallax__layer-three
-                +image('parallax/4.png', 'parallax__layer-img')
-              .parallax__layer-four
-                +image('parallax/5.png', 'parallax__layer-img')
-              .parallax__layer-five
-                +image('parallax/6.png', 'parallax__layer-img')
-              .parallax__layer-six
-                +image('parallax/7.png', 'parallax__layer-img')
+            .parallax__layer.parallax__bg
+              +image('parallax/1.jpg', 'parallax__bg-img')
+            .parallax__layer(data-speed="0.1")
+              +image('parallax/2.png', 'parallax__layer-img')
+            .parallax__layer(data-speed="1.1")
+              +image('parallax/3.png', 'parallax__layer-img')
+            .parallax__layer(data-speed="0.4")
+              +image('parallax/4.png', 'parallax__layer-img')
+            .parallax__layer(data-speed="0")
+              +image('parallax/5.png', 'parallax__layer-img')
+            .parallax__layer(data-speed="0.5")
+              +image('parallax/6.png', 'parallax__layer-img')
+            .parallax__layer(data-speed="0")
+              +image('parallax/7.png', 'parallax__layer-img')
             //- for (var i=1; i< 7; i++)
               .parallax__layer
                 picture
@@ -128,9 +127,9 @@ html(lang="en")
                           .user__data
                             .user__name Владимир Сабанцев
                             .user__occ  Преподаватель                        
-        section.form
-          form.myform
-            .section-title Связаться со мной
+          section.form
+            form.myform
+              .section-title Связаться со мной
               .form__row
                 -
                   var fields=[
@@ -143,11 +142,12 @@ html(lang="en")
                       +icon(`${item[0]}`,'form-block__icon')
                       .form-block__field
                         input(type="text" placeholder=item[2]).form-block__input
-              
+                
               .form__message
-                +icon('message','form-block__icon')
-                label.form__title Сообщение к письму
-                textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form__textarea
+                label.form__title( data-title="Сообщение к письму") Сообщение к письму
+                .form-block__container
+                  +icon('message','form-block__icon')
+                  textarea(placeholder="Требуется ваша помощь в создании сайта. \n Интересуют сроки и цена вопроса").form__textarea
               button.form__button Отправить
         
         footer.footer
@@ -159,10 +159,10 @@ html(lang="en")
             .footer__data
               .footer__menu
                 nav.menu.menu--color-white
-                    ul.menu__list.menu__list-footer
+                    ul.menu__list.menu__list_footer
                       each item in menuitems
                        li.menu__item
-                        a.menu__link(href="") #{item}
+                        a.menu__link(href="#" title= `${item}`) #{item}
               .footer__data-columns
                 .footer__data-col
                   article.footer__text Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool.  

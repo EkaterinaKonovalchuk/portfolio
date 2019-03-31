@@ -26,7 +26,11 @@
 }
 
 .footer__data{
-    width:60%;
+    width:70%;
+
+    @include tablets{
+        width:60%;
+    }
 
     @include phones{
         width:100%;
@@ -44,4 +48,9 @@
     @include phones{
         flex-direction: column;
     }
+}
+
+.footer__data-col{
+    flex:1;
+    width:50%;
 }

@@ -1,6 +1,10 @@
 .form{
     height:100vh;
     padding: 0 10%;
+
+    @include tablets{
+        height: auto;
+    }
 }
 
 .form__data{
@@ -36,7 +40,7 @@
 
 .form__message{
     padding-top: 40px;
-    width:50%;
+    
     border-bottom: 1px solid #414c63;
     border-color: #414c633d;
 }
