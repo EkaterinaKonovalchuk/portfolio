@@ -6,6 +6,17 @@
 .values__title{
     position: relative;
     padding: 8.75rem 25% 5.5rem;
+
+    @include tablets{
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    @include phones{
+        padding: 5.75rem 0 3.5rem;
+        text-align: left;
+    }
 }
 
 .values__desc{
@@ -19,6 +30,14 @@
 
 .values__container{
     position: relative;
+
+    @include tablets{
+    padding-bottom:400px;
+    }
+
+    @include phones{
+        padding-bottom:300px;
+    }
 }
 
 .values__container::before{
@@ -31,4 +50,16 @@
     left: -30%;
     background: url(../images/content/backpack.png) 0 100%/contain no-repeat;
     
+    @include tablets{
+        bottom: 0;
+        height: 30%;
+        width: 100%;
+        left: 22%;
+    }
+
+    @include phones{
+            height: 30%;
+    width: 100%;
+    left: 0;
+    }
 }

@@ -1,6 +1,11 @@
 .hero{
   height:100vh;
   min-height: 650px;
+  position:relative;
+
+  @include phones{
+    height:80vh;
+  }
 }
 
 .hero__container{
@@ -10,10 +15,22 @@
 }
 
 .hero__content{
-    flex:1;
+    flex:0.9;
     display:flex;
     justify-content:center;
     align-items:center;
+
+    @include desktop{
+      flex: 0.75;
+    }
+
+    @include tablets{
+      flex: 0.9;
+    }
+
+    @include phones{
+      flex: 0.8;
+    }
 }
 
 .hero__bottom--buttons{
