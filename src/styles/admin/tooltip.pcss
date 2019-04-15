@@ -1,0 +1,29 @@
+.input__error-tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 30%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+  .input__error-tooltip-container {
+    z-index: 100;
+    background: #cd1515;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top: 0;
+      border-bottom: 7px solid #cd1515;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }

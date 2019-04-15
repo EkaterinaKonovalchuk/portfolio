@@ -1,0 +1,70 @@
+.header{
+
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+    background-color: #3e3e59;
+    background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%); 
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__info{
+    display: flex;
+    align-items: center;
+}
+
+.header__title{
+    opacity: 0.5;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 34px;
+    padding-left: 28px;
+
+    @include phones{
+        display: none;
+    }
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+.user__foto{
+    overflow: hidden;
+    width: 44px;
+    border-radius: 50%;
+    height: 45px;
+    margin:0 auto;
+}
+
+.user__name{
+    align-items: center;
+    display: flex;
+    padding-left: 20px;
+    height: 18px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.user__foto-pic{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.button__exit{
+    opacity: 0.7;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: underline;
+}

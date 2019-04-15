@@ -1,0 +1,56 @@
+.tabs{
+    min-height: 77px;
+}
+
+.menu__list{
+    display:flex;
+    align-items:center;
+
+
+}
+
+
+
+.menu__item{
+    margin-right:70px;
+
+    &:last-child{
+        margin-right:0;
+    }
+
+    @include phones{
+        margin-right:32px;
+    }
+}
+
+.menu__link{
+    border-bottom: 3px solid transparent;
+    padding: 32px 29px;
+    display:inline-block;
+    text-decoration:none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+
+    &:hover{
+
+        color:#5500f2;
+        border-bottom: 3px solid #5500f2;
+        font-weight:700;
+
+    }
+    
+        &:after{
+        display:block;
+        content: attr(title);
+        height:0;
+        overflow:hidden;
+        visibility:hidden;
+        font-weight:700;
+    }
+
+    @include phones{
+        padding: 1.0625rem 0.6875rem;
+    }
+}
+
