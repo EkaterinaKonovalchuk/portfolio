@@ -1,0 +1,102 @@
+.edit-form__form-avatar-empty {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #dee4ed;
+    position: relative;
+
+    &:before {
+        content: "";
+        height: 115px;
+        width: 85px;
+        background: svg-load("man-user.svg", fill=#fff) center center no-repeat;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.edit-form__form-addphoto {
+    color: #383bcf;
+    font-weight: 600;
+}
+
+.edit-form__form-avatar-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+}
+
+.reviews__item {
+    margin-left: 30px;
+    width: calc(100% / 3 - 30px);
+    margin-bottom: 30px;
+
+    @include tablets {
+        width: calc(100% / 2 - 30px);
+    }
+
+    @include phones {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.reviews__form {
+    margin-bottom: 30px;
+}
+
+.reviews__content {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reviews__content-text {
+    line-height: 1.88;
+    font-weight: 600;
+}
+
+.reviews__btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-form__form-file-input{
+    position: absolute;
+    top: 0;
+    left: -9999px;
+}
+
+.edit-form__row {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.edit-form__form-block {
+    flex: 1;
+    margin-right: 30px;
+
+    @include tablets {
+        margin-right: 20px;
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

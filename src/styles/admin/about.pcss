@@ -1,0 +1,54 @@
+.about__container{
+    background: url("../images/admin/background.jpg") center center / cover no-repeat;
+    flex: 1;
+}
+
+.container.container__phone{
+ @include phones{
+     width: 100%;
+ }
+}
+
+button{
+    background-color: #ffffff;
+}
+
+.title{
+    color: #414c63;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 34px;
+    padding-right: 59px;
+}
+
+.about__title{
+    padding-bottom: 60px;
+    display: flex;
+
+    @include phones{
+        flex-direction: column;
+    }
+}
+
+
+.about__add{
+    color:#383bcf;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &:before{
+    content: "+";
+    color: #ffffff;
+    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    margin-right: 13px;
+    }
+
+    @include phones{
+        padding-top: 10px;
+    }
+}

@@ -18,15 +18,29 @@
                 transform: translate(-50%, -50%);
                 width:20px;
                 height:20px;
+
+             
             }
+
+           
         
         
         }
     }
+
+    @include tablets {
+        margin: 0 120px 0 10px;
+    }
+
+    @include phones{
+        display:none;
+    }
+
+    
 }
 
 .socials__item{
-    margin-right:40px;
+    margin-right:36px;
 
     &:last-child{
         margin-right:0;
@@ -41,6 +55,10 @@
 
 .socials__icon{
     fill: #414c63;
+
+       &:hover{
+               fill: #5500f2;
+           } 
 }
 
 .socials--rounded{

@@ -1,6 +1,7 @@
 .about{
-    height:100vh;
+    height:70vh;
     min-height: 650px;
+    position:relative;
 }
 
 .about__container{
@@ -8,10 +9,26 @@
     height:100%;
     padding: 178px 10% 265px;
     justify-content: space-between;
+
+    @include tablets{
+        padding: 11.125rem 0 16.5625rem;
+    }
+
+    @include phones{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
 }
 
 .about__left{
     width: 40%;
+
+    @include phones{
+        width:100%;
+        padding-bottom: 30px;
+    }
 }
 
 .about__right{
@@ -23,6 +40,10 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 30px;
+
+    @include phones{
+            width: 100%;
+    }
 }
 
 .about__welcome {

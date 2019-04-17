@@ -1,0 +1,53 @@
+.skill__list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+
+    @include phones{
+        flex-direction: column;
+        margin-left: 0;
+    }
+}
+
+.skill__list-item{
+    width: calc(100% / 2 - 30px);
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    &:first-child{
+        margin-left: 0;
+    }
+
+    @include phones{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.skill__block{
+    background: #fff;
+    box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
+    padding: 0 20px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill__block__title{
+    padding: 30px 2%;
+    border-bottom: 1px solid rgba(#1f232d, 0.15);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.skill__block__content{
+    padding: 0 2%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.skills-block-title{
+    display: flex;
+}

@@ -1,0 +1,33 @@
+script(type="text/x-template")#skills-list
+  .advantage__widget-container
+    svg(style="position:absolute; top:0; left:-9999px")
+      defs
+        linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+            stop(offset="0%" stop-color="#5500f2")
+            stop(offset="100%" stop-color="#8f00ef")
+    ul.user-skills 
+      li.user-skills__item(v-for="skill in skillsData")
+        skills-row(
+          :skillRowObject ="skill"
+        )
+      
+script(type="text/x-template")#skills-row
+  div.skills-row
+    .skills-row__title {{skillRowObject.skillsGroup}}
+    ul.skills-row__list
+      li.skills-row__item(v-for="(skillPersent, skillName) in skillRowObject.skillsList")
+         skill(
+            :skillName="skillName"
+            :skillPersent="skillPersent"
+         )
+
+script(type="text/x-template")#skill 
+    .skill      
+     svg(viewBox="0 0 100 100" preserveAapectRation="none").skill__shape
+          circle(
+                  r="40" cx="50" cy="50"
+          ).skill__circle.skill__circle--under
+          circle(
+                  r="40" cx="50" cy="50" ref="color-circle" stroke="url(#gradient)" transform="rotate(100 50 50)"
+          ).skill__circle.skill__circle--above
+     .skill__circle-text {{skillName}}
