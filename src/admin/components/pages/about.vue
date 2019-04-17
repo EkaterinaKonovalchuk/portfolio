@@ -14,8 +14,14 @@
           li.skill__list-item(v-if="showAddingForm")
             skill-add(
               )
-          li.skill__list-item
-            skill-group()
+          li.skill__list-item(
+            v-for="category in categories"
+            :key="category.id"
+          )
+            skill-group(
+              :category="category"
+              :skills = "skills"
+            )
             
             
       
@@ -23,6 +29,7 @@
 
 <script>
 
+import {mapActions, mapState} from "vuex";
 import skillAdd from "components/skills-add"
 import skillGroup from "components/skills-group"
   export default{
@@ -33,6 +40,32 @@ import skillGroup from "components/skills-group"
     data(){
       return{
         showAddingForm:false
+      }
+    },
+
+    computed:{
+      ...mapState('categories',{
+        categories: state => state.categories
+      }),
+      ...mapState('skills',{
+        skills: state => state.skills
+      })
+    },
+    methods: {
+      ...mapActions('categories', ['fetchCategories']),
+      ...mapActions('skills', ['fetchSkills'])
+    },
+    async created(){
+      try {
+       await this.fetchCategories();
+      }catch(error){
+      alert('произошла ошибка')
+      }
+
+       try {
+       await this.fetchSkills();
+      }catch(error){
+      alert('произошла ошибка при загрузке скиллов')
       }
     }
   }
